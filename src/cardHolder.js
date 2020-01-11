@@ -1,6 +1,7 @@
 import React from "react";
 import {StyleSheet, View, Switch} from "react-native";
 import {CreditCardInput, LiteCreditCardInput} from "react-native-input-credit-card";
+import {Navigation} from 'react-native-navigation'
 
 const s = StyleSheet.create({
     switch: {
@@ -30,21 +31,27 @@ export default class CardHolder extends React.Component {
     _onChange = formData => console.log(JSON.stringify(formData, null, " "));
     _onFocus = field => console.log("focusing", field);
 
+    componentDidMount = () => {
+        console.log("component did mount card")
+    }
+
     render() {
         return (
-            <View style={s.container}>
-                <CreditCardInput
-                    requiresName
-                    requiresCVC
-                    requiresPostalCode
-                    labelStyle={s.label}
-                    inputStyle={s.input}
-                    validColor={"black"}
-                    invalidColor={"red"}
-                    placeholderColor={"darkgray"}
-                    onFocus={this._onFocus}
-                    onChange={this._onChange}/>
-            </View>
+            <Navigation.Element>
+                <View style={s.container}>
+                    <CreditCardInput
+                        requiresName
+                        requiresCVC
+                        requiresPostalCode
+                        labelStyle={s.label}
+                        inputStyle={s.input}
+                        validColor={"black"}
+                        invalidColor={"red"}
+                        placeholderColor={"darkgray"}
+                        onFocus={this._onFocus}
+                        onChange={this._onChange}/>
+                </View>
+            </Navigation.Element>
         );
     }
 }

@@ -13,6 +13,7 @@ import ItemScreen from "./itemScreen.js";
 import ItemModal from "./itemModal.js";
 import styles from "./styles/styles.js";
 import {stringify} from "querystring";
+import {botOnPressHandler} from '../index.js';
 
 var plist = require("plist");
 var RNFS = require("react-native-fs");
@@ -97,7 +98,6 @@ class HomeScreen extends React.Component {
             }).catch(err => {
                 console.log(err);
             }).then(html => {
-                console.log(html);
                 const $ = cheerio.load(html);
                 const items = $(".card.card-2");
                 console.log("items");
@@ -228,30 +228,7 @@ class HomeScreen extends React.Component {
                                         }
                                     }
                                     console.log("color did not match, continuing");
-                                    this
-                                        .props
-                                        .navigation
-                                        .navigate("supreme", {
-                                            firstName: this.state.plistDict.firstNameLine,
-                                            timeout: this.state.slideValue,
-                                            lastName: this.state.plistDict.lastNameLine,
-                                            tel: this.state.plistDict.telephoneLine,
-                                            keyword: this.state.supremeList[this.state.currentSliderIndex].name,
-                                            addressOne: this.state.plistDict.addressOneLine,
-                                            addressTwo: this.state.plistDict.addressTwoLine,
-                                            city: this.state.plistDict.cityLine,
-                                            zipCode: this.state.plistDict.zipCodeLine,
-                                            email: this.state.plistDict.emailLine,
-                                            stateAbbreviated: this.state.plistDict.stateLine,
-                                            cardNumber: this.state.plistDict.cardNumberLine,
-                                            cvv: this.state.plistDict.cvvLine,
-                                            month: this.state.plistDict.monthLine,
-                                            year: this.state.plistDict.yearLine,
-                                            customTimeOut: this.state.slideValue,
-                                            selectedSize: this.state.selectedSize,
-                                            selectedColor: this.state.selectedColor,
-                                            colorId: this.state.colorId
-                                        });
+                                    botOnPressHandler();
                                     return;
                                 });
                         } else {
