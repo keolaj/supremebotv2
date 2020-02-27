@@ -2,7 +2,8 @@ import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import CardHolder from './cardHolder.js';
 import {Navigation} from 'react-native-navigation';
-import {cardOnPressHandler} from '../index.js'
+import {cardOnPressHandler} from '../index.js';
+import {profileOnPressHandler} from '../index.js';
 
 class ProfileScreen extends React.Component {
     componentDidMount = () => {
@@ -18,7 +19,7 @@ class ProfileScreen extends React.Component {
                 }}>
                     <TouchableOpacity
                         onPress={() => {
-                        cardOnPressHandler(this.props.componentId)
+                        cardOnPressHandler(this.props.componentId);
                     }}
                         style={{
                         backgroundColor: 'blue',
@@ -31,6 +32,20 @@ class ProfileScreen extends React.Component {
                     }}>
                         <Text>Card</Text>
                     </TouchableOpacity>
+					<TouchableOpacity 
+						onPress={() => {
+							profileOnPressHandler(this.props.componentId);
+						}}
+						style={{
+							backgroundColor: 'blue',
+							height: 70,
+							justifyContent: "center",
+							alignItems: "center",
+							width: '80%',
+							marginTop: 30,
+							borderRadius: 20
+						}}
+					/>
                 </View>
             </Navigation.Element>
         )

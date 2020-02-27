@@ -10,12 +10,16 @@ import HomeScreen from './src/homeScreen.js';
 import SupremeWebView from './src/supremeWebView.js';
 import ProfileScreen from './src/profileScreen.js';
 import CardHolder from './src/cardHolder';
+import ProfileEditor from './src/profileEditor';
+import ProfileCreator from './src/profileCreator';
 import {Navigation} from 'react-native-navigation';
 
 Navigation.registerComponent(`HomeScreen`, () => HomeScreen);
 Navigation.registerComponent(`ProfileScreen`, () => ProfileScreen);
 Navigation.registerComponent(`CardHolder`, () => CardHolder);
 Navigation.registerComponent(`SupremeWebView`, () => SupremeWebView);
+Navigation.registerComponent(`ProfileEditor`, () => ProfileEditor);
+Navigation.registerComponent(`ProfileCreator`, () => ProfileCreator);
 
 Navigation
     .events()
@@ -109,10 +113,14 @@ Navigation
 export const cardOnPressHandler = (parentComponentId) => {
     Navigation.push(parentComponentId, {
         component: {
-            name: "CardHolder"
+			name: "CardHolder",
+			animations: {
+				waitForRender: true,
+			}
         }
     })
 }
+
 export const botOnPressHandler = (parentComponentId) => {
     Navigation.push(parentComponentId, {
         component: {
@@ -122,6 +130,17 @@ export const botOnPressHandler = (parentComponentId) => {
             }
         }
     })
+}
+
+export const profileOnPressHandler = (parentComponentId) => {
+	Navigation.push(parentComponentId,  {
+		component: {
+			name: "ProfileEditor",
+			animations: {
+				waitForRender: true
+			}
+		}
+	})
 }
 
 AppRegistry.registerComponent(appName, () => App);

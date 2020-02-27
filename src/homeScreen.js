@@ -43,7 +43,8 @@ class HomeScreen extends React.Component {
             selectedColor: "",
             colorId: "",
             sizeId: "",
-            imageURL: ""
+			imageURL: "",
+			profiles: []
         };
         this.path = RNFS.DocumentDirectoryPath + "/Address.plist";
         RNFS
