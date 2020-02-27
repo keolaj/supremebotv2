@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, Modal, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, Button, Modal, TouchableOpacity, TextInput } from 'react-native';
 
 class ProfileEditor extends React.Component {
 	// nameOnChangeHandler = (text) => {
