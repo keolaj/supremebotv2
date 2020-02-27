@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, Modal, TouchableOpacity, TextInput } from 'react-native';
+import { View, Text, Button, Modal, TouchableOpacity, TextInput, SafeAreaView } from 'react-native';
 
 class ProfileEditor extends React.Component {
 	// nameOnChangeHandler = (text) => {
@@ -28,12 +28,12 @@ class ProfileEditor extends React.Component {
 					this.setState({isModalVisible:false})
 				}}
 				>
-					<View style={{marginTop: 30}}>
+					<SafeAreaView style={{marginTop: 30}}>
 						<Text>Test2</Text>
 						<Button onPress={() => {
 						this.setState({isModalVisible: false})
 						}} title={'dismiss'}/>
-					</View>
+					</SafeAreaView>
 				</Modal>
 			</View>
 		);
