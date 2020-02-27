@@ -234,7 +234,7 @@ PODS:
     - React
     - SDWebImage (~> 5.0)
     - SDWebImageWebPCoder (~> 0.2.3)
-  - RNFS (2.16.2):
+  - RNFS (2.16.6):
     - React
   - SDWebImage (5.4.2):
     - SDWebImage/Core (= 5.4.2)
@@ -375,7 +375,7 @@ SPEC CHECKSUMS:
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
   ReactNativeNavigation: 6a771d662fedc86f5e8df91debf3c02fe5f3e7f0
   RNFastImage: 9b0c22643872bb7494c8d87bbbb66cc4c0d9e7a2
-  RNFS: 0d4191b1052bef9ce70deff00a5b4169c62bbd9b
+  RNFS: 2bd9eb49dc82fa9676382f0585b992c424cd59df
   SDWebImage: 4ca2dc4eefae4224bea8f504251cda485a363745
   SDWebImageWebPCoder: 947093edd1349d820c40afbd9f42acb6cdecd987
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b

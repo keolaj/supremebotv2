@@ -11,7 +11,6 @@ import SupremeWebView from './src/supremeWebView.js';
 import ProfileScreen from './src/profileScreen.js';
 import CardHolder from './src/cardHolder';
 import ProfileEditor from './src/profileEditor';
-import ProfileCreator from './src/profileCreator';
 import {Navigation} from 'react-native-navigation';
 
 Navigation.registerComponent(`HomeScreen`, () => HomeScreen);
@@ -19,7 +18,6 @@ Navigation.registerComponent(`ProfileScreen`, () => ProfileScreen);
 Navigation.registerComponent(`CardHolder`, () => CardHolder);
 Navigation.registerComponent(`SupremeWebView`, () => SupremeWebView);
 Navigation.registerComponent(`ProfileEditor`, () => ProfileEditor);
-Navigation.registerComponent(`ProfileCreator`, () => ProfileCreator);
 
 Navigation
     .events()
