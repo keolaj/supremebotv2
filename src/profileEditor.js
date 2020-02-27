@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, Modal } from 'react-native';
+import { View, Text, Button, Modal, TouchableWithoutFeedback } from 'react-native';
 
 class ProfileEditor extends React.Component {
 	// nameOnChangeHandler = (text) => {
@@ -21,8 +21,19 @@ class ProfileEditor extends React.Component {
 						isModalVisible: true
 					})
 				}}/>
-				<Modal visible={this.state.isModalVisible} presentationStyle={"formSheet"} animationType={"slide"}>
-					<Text>Test</Text>
+				<Modal visible={this.state.isModalVisible} presentationStyle={"formSheet"} animationType={"slide"} onDismiss={() => {
+					this.setState({isModalVisible: false});
+					console.log('modal dismissed')
+				}} onRequestClose={() => {
+					this.setState({isModalVisible:false})
+				}}
+				>
+					<View style={{marginTop: 30}}>
+						<Text>Test2</Text>
+						<Button onPress={() => {
+						this.setState({isModalVisible: false})
+						}} title={'dismiss'}/>
+					</View>
 				</Modal>
 			</View>
 		);
