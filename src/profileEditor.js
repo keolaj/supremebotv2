@@ -28,11 +28,20 @@ class ProfileEditor extends React.Component {
 					this.setState({isModalVisible:false})
 				}}
 				>
-					<SafeAreaView style={{marginTop: 30}}>
-						<Text>Test2</Text>
-						<Button onPress={() => {
-						this.setState({isModalVisible: false})
-						}} title={'dismiss'}/>
+					<SafeAreaView style={{marginTop: 30,}}>
+						<Text style={{textAlign: 'center', fontSize: 40, right:'20%'}}>Shipping Info</Text>
+						
+						<View style={{marginTop:'10%'}}>
+							<TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} placeholder="Full Name"></TextInput>
+							<TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} placeholder="Address Line 1"></TextInput>
+							<TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} placeholder="Address Line 2"></TextInput>
+							<TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} placeholder="City"></TextInput>
+							<TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} placeholder="State"></TextInput>
+							<TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}} placeholder="Zip Code"></TextInput>
+							<TouchableOpacity style={{alignSelf:'center',marginTop: '2%', backgroundColor: 'transparent', textAlign:'center'}}onPress={() => {
+							this.setState({isModalVisible: false})
+							}}><Text style={{alignSelf:'center', color:'blue',fontSize: 20}}>Dismiss</Text></TouchableOpacity>
+						</View>
 					</SafeAreaView>
 				</Modal>
 			</View>
